@@ -1,4 +1,4 @@
-import { Urls } from '../../modules/url-shortener/entities/urls.entities';
+import { Urls } from '../../modules/url-shortener/entities/urls.entity';
 
 export default (factory: any) => {
   factory.define('urls', Urls, {
