@@ -51,7 +51,7 @@ describe('URL (E2E) tests', () => {
         .get(`${url}/decode/${encodedUrls[0].alias}`)
         .set('Accept', 'application/json')
         .send({})
-        .expect(404);
+        .expect(200);
     });
 
     it("should fail to decode a url if alias doesn't exists", async () => {
@@ -59,7 +59,7 @@ describe('URL (E2E) tests', () => {
         .get(`${url}/decode/random`)
         .set('Accept', 'application/json')
         .send({})
-        .expect(200);
+        .expect(404);
     });
   });
 });
