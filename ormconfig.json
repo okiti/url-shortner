@@ -7,7 +7,7 @@
    "database": "antarctica",
    "synchronize": true,
    "logging": false,
-   "entities": ["dist/src/modules/**/entities/*.entity.{ts,js}"],
+   "entities": ["dist/modules/**/entities/*.entity.{ts,js}"],
    "migrations": [
       "dist/src/migration/*{.ts,.js}"
    ],

@@ -1,4 +1,4 @@
-import { isTestEnv } from './vars';
+import { Vars, dbConfigVars } from './vars';
 
 export const getDbConfig = {
   host: 'localhost',
@@ -8,11 +8,9 @@ export const getDbConfig = {
   database: 'antarctica',
   synchronize: true,
   logging: false,
-  entities: isTestEnv()
-    ? ['src/modules/**/entities/*.entity.{ts,js}']
-    : ['dist/src/modules/**/entities/*.entity.{ts,js}'],
-  migrations: ['dist/src/migration/*{.ts,.js}'],
-  subscribers: ['src/subscriber/**/*.ts'],
+  entities: dbConfigVars[Vars.env].entities,
+  migrations: dbConfigVars[Vars.env].migrations,
+  subscribers: dbConfigVars[Vars.env].subscribers,
   cli: {
     entitiesDir: 'src/entity',
     migrationsDir: 'src/migration',
