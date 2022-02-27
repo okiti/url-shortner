@@ -16,5 +16,6 @@ export const deviceLogger = async (req, res, next) => {
   const thisDevice = detector.detect(userAgent);
   res.locals.geo = geo;
   res.locals.device = thisDevice;
+  console.log(thisDevice);
   next();
 };
