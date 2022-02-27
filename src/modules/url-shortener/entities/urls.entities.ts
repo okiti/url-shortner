@@ -8,12 +8,12 @@ import {
 } from 'typeorm';
 
 @Entity({ name: 'urls' })
-export class Products extends BaseEntity {
+export class Urls extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ nullable: false })
-  url: string;
+  originalUrl: string;
 
   @Column({ nullable: false })
   alias: string;
