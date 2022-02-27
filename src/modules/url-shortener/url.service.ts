@@ -4,7 +4,7 @@ import shortCode from '../../utils/generateCode';
 import HttpError from '../../exceptions/http-error';
 import { UrlModel, encodeType, decodeType } from './types/url.types';
 
-export const endcode = async (payload: encodeType): Promise<UrlModel> => {
+export const encode = async (payload: encodeType): Promise<UrlModel> => {
   const urlRepository = getConnection().getRepository(Urls);
   const { url } = payload;
   let alias = shortCode();
