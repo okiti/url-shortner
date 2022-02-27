@@ -2,8 +2,9 @@ import { getConnection } from 'typeorm';
 import { Urls } from './entities/urls.entities';
 import shortCode from 'src/utils/generateCode';
 import HttpError from '../../exceptions/http-error';
+import { UrlModel, encodeType, decodeType } from './types/url.types';
 
-export const endcode = async (payload: { url: string }) => {
+export const endcode = async (payload: encodeType): Promise<UrlModel> => {
   const urlRepository = getConnection().getRepository(Urls);
   const { url } = payload;
   const alias = shortCode();
@@ -16,7 +17,7 @@ export const endcode = async (payload: { url: string }) => {
   return shortendUrl;
 };
 
-export const decode = async (payload: { alias: string }) => {
+export const decode = async (payload: decodeType): Promise<UrlModel> => {
   const { alias } = payload;
   const urlRepository = getConnection().getRepository(Urls);
   const url = await urlRepository.findOne({ alias });
