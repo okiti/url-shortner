@@ -1,6 +1,6 @@
 import { getConnection } from 'typeorm';
 import { Urls } from './entities/urls.entities';
-import shortCode from 'src/utils/generateCode';
+import shortCode from '../../utils/generateCode';
 import HttpError from '../../exceptions/http-error';
 import { UrlModel, encodeType, decodeType } from './types/url.types';
 

@@ -13,13 +13,14 @@ export const log = bunyan.createLogger({
   stream: formatOut,
 });
 
-export const logMiddleware = (logger: any) => expressRequestsLogger({
-  logger,
-  request: {
-    maskBody: ['password'],
-    maskHeaders: ['authorization', 'token', 'auth-token'],
-  },
-  response: {
-    maskHeaders: ['authorization', 'token', 'auth-token'],
-  },
-});
+export const logMiddleware = (logger: any) =>
+  expressRequestsLogger({
+    logger,
+    request: {
+      maskBody: ['password'],
+      maskHeaders: ['authorization', 'token', 'auth-token'],
+    },
+    response: {
+      maskHeaders: ['authorization', 'token', 'auth-token'],
+    },
+  });

@@ -1,10 +1,7 @@
 import express from 'express';
-
+import UrlRoutes from '../modules/url-shortener/url.route';
 const router = express.Router();
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-router.get('/', (req, res, next) => {
-  res.send('URL shortener API');
-});
+router.use('/', UrlRoutes);
 
 export default router;

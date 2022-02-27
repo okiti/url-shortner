@@ -1,2 +1,1 @@
-export { default as UserFactory } from './user.factory';
-export { default as RouteFactory } from './routes.factory';
+export { default as UrlFactory } from './urls.factory';

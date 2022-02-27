@@ -4,7 +4,6 @@ dotenv.config();
 type varsDto = {
   port?: string;
   secret: string;
-  frontendUrl: string;
 };
 
 export const Vars: varsDto = {
