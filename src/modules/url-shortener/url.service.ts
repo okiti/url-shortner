@@ -7,8 +7,11 @@ import { UrlModel, encodeType, decodeType } from './types/url.types';
 export const endcode = async (payload: encodeType): Promise<UrlModel> => {
   const urlRepository = getConnection().getRepository(Urls);
   const { url } = payload;
-  const alias = shortCode();
-
+  let alias = shortCode();
+  const alreadyExists = await urlRepository.findOne({ alias });
+  while (alreadyExists) {
+    alias = shortCode();
+  }
   const shortendUrl = urlRepository.create();
   shortendUrl.originalUrl = url;
   shortendUrl.alias = alias;
