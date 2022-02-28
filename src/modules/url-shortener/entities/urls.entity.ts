@@ -18,6 +18,9 @@ export class Urls extends BaseEntity {
   @Column({ nullable: false })
   alias: string;
 
+  @Column({ nullable: false, default: 0 })
+  visits: number;
+
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 

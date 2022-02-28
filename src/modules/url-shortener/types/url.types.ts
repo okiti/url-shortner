@@ -12,4 +12,7 @@ export interface encodeType {
 
 export interface decodeType {
   alias: string;
+  ip: string;
+  country: string;
+  device: any;
 }

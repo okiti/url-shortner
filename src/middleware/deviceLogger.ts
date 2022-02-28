@@ -14,8 +14,7 @@ export const deviceLogger = async (req, res, next) => {
   const geo = geoip.lookup(clientIp);
   const detector = new DeviceDetector();
   const thisDevice = detector.detect(userAgent);
-  res.locals.geo = geo;
+  res.locals.geo = { ...geo, ip: clientIp };
   res.locals.device = thisDevice;
-  console.log(thisDevice);
   next();
 };
