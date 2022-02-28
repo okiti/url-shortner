@@ -1,5 +1,7 @@
 # URL SHORTENER
 A microservice for shortening urls.
+#### API DOCUMENTATION:
+https://documenter.getpostman.com/view/7392599/UVkqsaZZ
 ### Dependencies
 
 - Node js
@@ -57,3 +59,4 @@ when checking the url statistic route, it returns the last 10 devices that were 
 
 ## Improvements
 - The device logger can be improved by using a faster cache storage like Redis.
+- Github actions can be added to run tests on push for better reliability
